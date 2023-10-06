@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Task 5-10</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+<script>    
+        //TASK#5
+            function checkDate() {
+                var currentDate = new Date();
+                var date = currentDate.getDate();
+                
+                var message = (date <= 15) ? "First fifteen days of the Month" : "Last days of the month";
+                document.write(message)
+            }
+            checkDate();
+</script>
+<br>
+
+<script>
+        //TASK#6
+        var currentTimeInMillis = Date.now();
+        var minutesSince1970 = Math.floor(currentTimeInMillis / 60000);
+        document.write("Minutes since 1970: " + minutesSince1970);
+</script>
+<br>
+<script>    
+    //TASK#7
+        function checkm() {
+            var currentm = new Date();
+            var m = currentm.getHours();
+            
+            var message = (m <= 11) ? "It's AM" : "It's PM";
+            document.write(message)
+        }
+        checkm();
+</script>
+<br>
+<script>
+    //TASK#8
+    var date = new Date('2020-12-31');
+    date.setDate(date.getDate());
+
+    var laterDate = date;
+    document.write("Last day of the last month of 2020: " + laterDate.toDateString());
+</script>
+<br>
+
+<script>
+    //TASK#9
+    var ramadan2015 = new Date('2015-06-18');
+    var currentDate = new Date();
+
+    var timeDiff = currentDate - ramadan2015;
+    var daysSinceRamadan2015 = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    alert("Days since 1st Ramadan: " + daysSinceRamadan2015);
+</script>
+
+<script>
+    //TASK#10
+    var referenceDate = new Date('2015-01-02'); 
+    var beg = new Date('2015-01-01');
+    var timeDifference = referenceDate - beg;
+    var secondsElapsed = Math.floor(timeDifference / 1000);
+    document.write("Seconds elapsed since the beginning of 2015: " + secondsElapsed);
+</script>
+<BR>
+<script>
+    //TASK#11
+    var currentDate = new Date();
+    var currentHour = currentDate.getHours();
+    currentDate.setHours(currentHour + 1);
+    document.write("current date: " + currentDate);
+    document.write("1 Hour ago, it was: " + new Date() + "<br>");
+</script>
+
+<script>
+        //TASK#12
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        currentDate.setFullYear(currentYear - 100);
+        document.write("current date: " + currentDate);
+</script>
+<br>
+
+<script>
+    //TASK#13
+    var userAge = prompt("Please enter your age:");
+    var currentYear = new Date().getFullYear();
+    var birthYear = currentYear - userAge;
+    document.write("Your birth year is: " + birthYear);
+</script>
+<br>
+
+<script>
+    //TASK#15
+    function generateBill() {
+        var customerName = document.getElementById("customerName").value;
+        var billingMonth = document.getElementById("billingMonth").value;
+
+        
+        var items = [
+            { name: "Total", price: 15.75 },
+            { name: "Tax", price: 9.99 },
+            { name: "Previous", price: 25.50 }];
+
+        var totalAmount = 0;
+        for (var i = 0; i < items.length; i++) 
+        {
+            totalAmount += items[i].price;
+        }
+
+       
+        totalAmount = totalAmount.toFixed(2);
+        var billText = "<h2>Customer Bill</h2>";
+        billText += "<p>Customer Name: " + customerName + "</p>";
+        billText += "<p>Billing Month: " + billingMonth + "</p>";
+        billText += "<p>Items:</p>";
+        billText += "<ul>";
+        for (var i = 0; i < items.length; i++) 
+        {
+            billText += "<li>" + items[i].name + ": $" + items[i].price.toFixed(2) + "</li>";
+        }
+        billText += "</ul>";
+        billText += "<p>Total Amount: $" + totalAmount + "</p>";
+        document.getElementById("bill").innerHTML = billText;
+    }
+    generateBill();
+</script>
+    </body>
+</html>

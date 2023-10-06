@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 31-34 TASK 1-4</title>
+</head>
+<body>
+    <script>
+        //TASK#1
+        function updateDateTime()
+         {
+         document.write("Current Date and Time: " + new Date() + "<br>");
+        }
+        updateDateTime();
+       
+    </script>
+
+
+<script>
+    //TASK#2
+    function alertCurrentMonth() 
+    {
+        var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var currentMonthNumber = new Date().getMonth();
+        var currentMonthName = months[currentMonthNumber];
+
+        alert("Current Month: " + currentMonthName);
+    }
+    alertCurrentMonth();
+</script>
+
+<script>
+    //TASK#3
+    function alertCurrentDay() 
+    {
+        var months = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var currentDayNumber = new Date().getDay();
+        var currentDayName = months[currentDayNumber];
+
+        alert("Current Day: " + currentDayName);
+    }
+    alertCurrentDay();
+</script>
+
+<script>
+    //TASK#4
+    function FunDay() 
+    {
+        var months = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var currentDayNumber = new Date().getDay();
+        var currentDayName = months[currentDayNumber];
+
+        if(currentDayName==="Sat" || currentDayName==="Sun" ){
+           document.write("Its Fun Day");
+        }
+        else{
+            document.write("Not a Fun Day")
+        }
+    }
+    FunDay();
+</script>
+
+
+</body>
+</html>
